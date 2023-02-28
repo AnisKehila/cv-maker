@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 *,
 *::after,
 *::before {
@@ -6,6 +7,9 @@
     font-family: Nunito, sans-serif;
     margin: 0;
     padding: 0;
+}
+img {
+    max-width: 100%;
 }
 ul {
     list-style: none;
@@ -30,12 +34,96 @@ header {
     width: 21cm;
     height: 29.7cm;
     background-color: #eef1ef;
-    margin: auto;
-    .cv-header {
-        background-color: #00416A;
-        .name {
-            color: #ffff;
-            font-size: 1.6rem;
+    margin: 16px auto;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    color: #343b48;
+    display: flex;
+    .cv-side-bar {
+        width: 34%;
+        height: 29.7cm;
+        background-color: #323b4c;
+        color: #ffff;
+        img {
+            width: 194px;
+            height: 194px;
+            display: flex;
+            margin: 32px auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            padding-left: 32px;
+            div {
+                margin: 24px 0;
+                h4 {
+                    font-size: 1.35rem;
+                }
+
+            }
         }
     }
+    .title {
+        font-size: 1.8rem;
+        width: 100%;
+        border-bottom: 2px solid #b2b6bd;
+    }
+    .cv-content {
+        padding: 10px 16px;
+        width: 66%;
+        margin-top: 32px;
+        .cv-header {
+            .name {
+                font-size: 2.8rem;
+                font-weight: 700;
+                margin-bottom: -11px;
+                letter-spacing: 4px;
+            }
+            .job {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+        }
+        .description {
+            margin: 12px 0;
+            text-align: justify;
+        }
+        .experience-container,
+        .education-container {
+            ul {
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 2px;
+                    height: 100%;
+                    position: absolute;
+                    left: 11px;
+                    top: 11px;
+                    background-color: #023047;
+                }
+            }
+            li {
+                justify-content: space-between;
+                margin: 24px 0;
+                margin-left: 32px;
+                position: relative;
+                &::before {
+                    content: "";
+                    width: 14px;
+                    height: 14px;
+                    position: absolute;
+                    left: -6%;
+                    top: 4px;
+                    background-color: white;
+                    border: 3px solid #023047;
+                    border-radius: 50%;
+                }
+                .from-to,
+                .position {
+                    font-weight: 700;
+                    color: #023047;
+                    font-size: 1.06rem;
+                }
+            }
+        }
+    } 
 }
