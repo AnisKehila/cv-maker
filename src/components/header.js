@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react'
 
-function header() {
+export default function Header() {
     return (
-        <h1 className="header">
-            Make Your Proffessional CV Online
-        </h1>
-    );
+        <header>
+            <h1>Cv Creator</h1>
+            <h3>Create Your CV Online</h3>
+        </header>
+    )
 }
-
-export default header;

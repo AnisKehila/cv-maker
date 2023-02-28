@@ -1,10 +1,11 @@
 import React from "react";
-import Header from "./components/header";
-import './style.scss';
+import Cv from "./CV/Cv";
+import Header from "./Header"
 function App() {
   return (
     <>
       <Header />
+      <Cv />
     </>
   );
 }
