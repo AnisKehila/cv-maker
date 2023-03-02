@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function CvHeader({fname = 'Anis', lname = 'Kehila', title = 'Web Designer & Developer'}) {
+export default function CvHeader({firstName, lastName, jobTitle}) {
     return (
         <div className='cv-header'>
-            <div className='name'>{`${fname} ${lname}`}</div>
-            <div className='job'>{title}</div>
+            <div className='name'>{`${firstName} ${lastName}`}</div>
+            <div className='job'>{jobTitle}</div>
         </div>
     )
 }
