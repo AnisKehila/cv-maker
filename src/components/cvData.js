@@ -1,5 +1,5 @@
 import userImg from '../assets/user-profile-avatar.webp'
-
+import { v4 as uuidv4 } from "uuid";
 const cvData = {
     personalInfo : {
         firstName : 'Anis',
@@ -11,9 +11,9 @@ const cvData = {
         pnum : '+213 781495820',
         address : '958 Street, Jijel, Algeria',
         langs : [
-            {'lang' : 'English' ,'lvl' : 'Almost Fluant'},
-            {'lang' : 'French' ,'lvl' : 'Good'},
-            {'lang' : 'Arabic' ,'lvl' : 'Fluant'}
+            {lang : 'English' ,lvl : 'Almost Fluant' ,id: uuidv4()},
+            {lang : 'French' ,lvl : 'Good' ,id: uuidv4()},
+            {lang : 'Arabic' ,lvl : 'Fluant' ,id: uuidv4()}
         ]
     }
 }

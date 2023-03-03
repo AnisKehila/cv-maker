@@ -43,6 +43,10 @@ main {
         padding: 32px;
         color: #343b48;
         border-radius: 4px;
+        .language {
+            display: flex;
+            justify-content: space-between;
+        }
         input,textarea {
             border-radius: 8px;
             border: transparent;
@@ -50,13 +54,23 @@ main {
             padding: 8px 16px;
             font-size: 1.1rem;
             background-color: #FFFF;
-            &:focus {
+            &:focus-visible {
                 outline: 1px solid #023047;
             }
         }
         textarea {
             resize: none;
+            min-height: 164px;
 
+        }
+        input.remove {
+            cursor: pointer;
+            background-color: transparent;
+            transition: .2s;
+            &:hover {
+                background-color: #ffff;
+                color: red;
+            }
         }
         .info {
             display: flex;
