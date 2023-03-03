@@ -82,6 +82,8 @@ main {
 @media (max-width: 1799px) {
     main {
         flex-direction: column;
+        align-items: center;
+        gap: 64px;
     }
 }
 .cv-container {
@@ -149,7 +151,7 @@ main {
                     width: 2px;
                     height: 100%;
                     position: absolute;
-                    left: 11px;
+                    left: 10px;
                     top: 11px;
                     background-color: #023047;
                 }
