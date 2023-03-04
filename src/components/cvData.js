@@ -15,6 +15,12 @@ const cvData = {
             {lang : 'French' ,lvl : 'Good' ,id: uuidv4()},
             {lang : 'Arabic' ,lvl : 'Fluant' ,id: uuidv4()}
         ]
-    }
+    },
+    experience : [
+        {from: '2016', to: '2018', companyName: 'Algerie Telecom', jobPosition : 'UI/UX Designer', key: uuidv4()},
+        {from: '2018', to: '2020', companyName: 'Mobilis', jobPosition: 'Server Side Engineer', key: uuidv4()},
+        {from: '2020', to: 'present', companyName: 'Djezzy', jobPosition: 'Back-end web developer', key: uuidv4()}
+    ]
+    
 }
 export default cvData

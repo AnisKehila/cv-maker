@@ -77,7 +77,7 @@ export default function Main() {
             )
         })
     }
-    function langClickHandler(e) {
+    function langClickHandler() {
         setCvData((prevState) => {
             return (
                 {
@@ -90,8 +90,47 @@ export default function Main() {
             )
         })
     }
-
-
+    function changeExpHandler(e) {
+        setCvData((prevState) => {
+            let newExp = prevState.experience;
+            newExp = newExp.map(exp => 
+                exp.key == e.target.id ? {...exp, [e.target.name]: e.target.value}: exp
+            )
+            return (
+                {
+                    ...prevState,
+                    experience : newExp
+                }
+            )
+        })
+    }
+    function removeHandler(e) {
+        setCvData((prevState) => {
+            const name = e.target.name
+            let newArr = prevState[name];
+            newArr = newArr.filter(item => 
+                item.key == e.target.id ? false : item
+            )
+            return (
+                {
+                    ...prevState,
+                    [name] : newArr
+                }
+            )
+        })
+    }
+    function addExpHandler(e) {
+        setCvData((prevState) => {
+            let newExp = prevState.experience;
+            newExp.push({from: '', to: '', companyName: '', jobPosition: '', key: uuidv4()});
+            return (
+                {
+                    ...prevState,
+                    experience : newExp
+                }
+            )
+        })
+    } 
     return (
         <main>
             <Form
@@ -100,6 +139,9 @@ export default function Main() {
                 handleLangChange = {handleLangChange}
                 removeLangHandler = {removeLangHandler}
                 langClickHandler = {langClickHandler}
+                changeExpHandler = {changeExpHandler}
+                removeHandler = {removeHandler}
+                addExpHandler = {addExpHandler}
             />
             <Cv cv = {cv}/>
         </main>

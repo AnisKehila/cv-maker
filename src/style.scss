@@ -37,7 +37,7 @@ main {
     margin: 16px auto;
     .form-container {
         width: 21cm !important;
-        height: 29.7cm !important;
+        min-height: 29.7cm !important;
         background-color: #eef1ef;
         box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
         padding: 32px;
@@ -67,15 +67,28 @@ main {
             cursor: pointer;
             background-color: transparent;
             transition: .2s;
+            color: #FFFF;
+            background-color: #323b4c;
+            transition: .2s;
             &:hover {
-                background-color: #ffff;
                 color: red;
             }
+        }
+        input.add {
+            background-color: blueviolet;
+            color: #FFFF;
+            cursor: pointer;
         }
         .info {
             display: flex;
             flex-direction: column;
             margin: 20px 0;
+        }
+        .exp-container {
+            .experience-item {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
@@ -93,6 +106,8 @@ main {
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
     color: #343b48;
     display: flex;
+    position: sticky;
+    top: 10px;
     .cv-side-bar {
         width: 34%;
         height: 29.7cm;
