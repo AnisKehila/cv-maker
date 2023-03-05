@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useRef} from 'react'
 import UserInfo from './FormItems/UserInfo'
 import Education from './FormItems/Education'
 import Experience from './FormItems/Experience'
@@ -14,7 +14,10 @@ export default function Form(
         removeHandler,
         addExpHandler,
         addEducationHandler,
-        changeEduHandler
+        changeEduHandler,
+        loadExample,
+        generatePdf,
+        resetExample
     }
     ) {
     return (
@@ -38,6 +41,9 @@ export default function Form(
                 changeEduHandler = {changeEduHandler}
                 addEducationHandler = {addEducationHandler}
             />
+            <input type='button' value='Generate PDF' className='generate' onClick={generatePdf}/>
+            <input type='button' className='load-example' value='Load Example' onClick={loadExample} />
+            <input type='button' className='reset' value='Reset' onClick={resetExample} />
         </div>
     )
 }

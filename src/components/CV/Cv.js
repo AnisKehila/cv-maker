@@ -1,13 +1,13 @@
-import React from 'react'
+import React , {useRef} from 'react'
 import CvHeader from './CvItems/CvHeader'
 import Education from './CvItems/Education'
 import Experience from './CvItems/Experience'
 import SideBar from './CvItems/SideBar'
 import Description from './CvItems/Description'
 
-export default function Cv({cv}) {
+export default function Cv({cv ,refValue}) {
     return (
-        <div className='cv-container'>
+        <div className='cv-container' ref={refValue}>
             <SideBar
                 img = {cv.personalInfo.img}
                 email = {cv.personalInfo.email}

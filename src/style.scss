@@ -65,24 +65,48 @@ main {
         }
         input.remove {
             cursor: pointer;
-            background-color: transparent;
             transition: .2s;
             color: #FFFF;
             background-color: #323b4c;
             transition: .2s;
             &:hover {
                 color: red;
+                background-color: #000000;
             }
         }
         input.add {
-            background-color: blueviolet;
+            background-color: #023047;
+            &:hover {
+                background-color: rgb(45, 24, 95);
+            }
+        }
+        input.generate {
+            margin-top: 88px;
+            background-color: green;
+            &:hover {
+                background-color: rgb(16, 65, 16);
+            }
+        }
+        input.reset {
+            background-color: rgb(231, 26, 26);
+            &:hover {
+                background-color: rgb(107, 8, 8);
+            }
+        }
+        input.load-example {
+            background-color: rgb(60, 60, 187);
+            &:hover {
+                background-color: rgb(16, 19, 65);
+            }
+        }
+        input.generate,
+        input.load-example,
+        input.reset,
+        input.add {
             color: #FFFF;
             cursor: pointer;
             width: 100%;
             transition: .2s;
-            &:hover {
-                background-color: #023047;
-            }
         }
         .info {
             display: flex;
@@ -203,4 +227,23 @@ main {
             }
         }
     } 
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(51, 51, 51);
+    margin-top: 32px;
+    padding: 8px 16px;
+    color: #FFFF;
+    a {
+        display: flex;
+        color: white;
+        font-size: 20px;
+        transition: .4s;
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
 }

@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState , useRef, forwardRef } from 'react'
 import Form from "./Form/Form";
 import Cv from "./CV/Cv"
 import cvData from './cvData';
+import cvDataExample from './cvDataExample';
 import { v4 as uuidv4 } from "uuid";
+import { useReactToPrint } from 'react-to-print';
+
 
 export default function Main() {
     const [cv , setCvData] = useState(cvData);
+    function loadExample() {
+        setCvData(prevState => prevState = cvDataExample)
+    }
+    function resetExample() {
+        setCvData(prevState => prevState = cvData)
+    }
+
     function handleInfoChange(e) {
         const name = e.target.name;
         if(name === 'language-name' || name === 'language-lvl') {
@@ -157,6 +167,8 @@ export default function Main() {
             )
         })
     }
+    const componentRef = useRef();
+    const generatePdf = useReactToPrint({ content: () => componentRef.current });
     return (
         <main>
             <Form
@@ -170,8 +182,11 @@ export default function Main() {
                 addExpHandler = {addExpHandler}
                 addEducationHandler = {addEducationHandler}
                 changeEduHandler = {changeEduHandler}
+                loadExample = {loadExample}
+                resetExample = {resetExample}
+                generatePdf = { generatePdf  }
             />
-            <Cv cv = {cv}/>
+            <Cv cv = {cv} refValue={componentRef}/>
         </main>
     )
 }
