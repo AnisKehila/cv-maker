@@ -12,7 +12,9 @@ export default function Form(
         removeLangHandler,
         changeExpHandler,
         removeHandler,
-        addExpHandler
+        addExpHandler,
+        addEducationHandler,
+        changeEduHandler
     }
     ) {
     return (
@@ -31,8 +33,10 @@ export default function Form(
                 addExpHandler = {addExpHandler}
             />
             <Education 
-                experience = {cv.education}
+                education = {cv.education}
                 removeHandler = {removeHandler}
+                changeEduHandler = {changeEduHandler}
+                addEducationHandler = {addEducationHandler}
             />
         </div>
     )

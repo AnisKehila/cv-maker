@@ -122,7 +122,7 @@ export default function Main() {
     function addExpHandler(e) {
         setCvData((prevState) => {
             let newExp = prevState.experience;
-            newExp.push({from: '', to: '', companyName: '', jobPosition: '', key: uuidv4()});
+            newExp = [ ...newExp, ({from: '', to: '', companyName: '', jobPosition: '', key: uuidv4()})];
             return (
                 {
                     ...prevState,
@@ -130,7 +130,33 @@ export default function Main() {
                 }
             )
         })
-    } 
+    }
+    function addEducationHandler(e) {
+        setCvData((prevState) => {
+            let neweducation = prevState.education;
+            neweducation = [ ...neweducation, ({from: '', to: '', companyName: '', jobPosition: '', key: uuidv4()})];
+            return (
+                {
+                    ...prevState,
+                    education : neweducation
+                }
+            )
+        })
+    }
+    function changeEduHandler(e) {
+        setCvData((prevState) => {
+            let newEdu = prevState.education;
+            newEdu = newEdu.map(edu => 
+                edu.key == e.target.id ? {...edu, [e.target.name]: e.target.value}: edu
+            )
+            return (
+                {
+                    ...prevState,
+                    education : newEdu
+                }
+            )
+        })
+    }
     return (
         <main>
             <Form
@@ -142,6 +168,8 @@ export default function Main() {
                 changeExpHandler = {changeExpHandler}
                 removeHandler = {removeHandler}
                 addExpHandler = {addExpHandler}
+                addEducationHandler = {addEducationHandler}
+                changeEduHandler = {changeEduHandler}
             />
             <Cv cv = {cv}/>
         </main>

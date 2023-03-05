@@ -78,14 +78,21 @@ main {
             background-color: blueviolet;
             color: #FFFF;
             cursor: pointer;
+            width: 100%;
+            transition: .2s;
+            &:hover {
+                background-color: #023047;
+            }
         }
         .info {
             display: flex;
             flex-direction: column;
             margin: 20px 0;
         }
-        .exp-container {
-            .experience-item {
+        .exp-container,
+        .education-container {
+            .experience-item,
+            .education-item {
                 display: flex;
                 flex-direction: column;
             }

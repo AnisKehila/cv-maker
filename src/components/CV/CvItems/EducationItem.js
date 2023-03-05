@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function EducationItem({from = '2017', to = '2020', schoolName = 'University Mhamed Bougerra, Boumerdes', subject = 'Computer Science', degree = 'Licence'}) {
+export default function EducationItem({from, to, schoolName, subject, degree}) {
     return (
         <li className='education-item'>
             <div className='from-to'>{`${from} - ${to}`}</div>

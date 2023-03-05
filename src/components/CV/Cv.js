@@ -23,7 +23,7 @@ export default function Cv({cv}) {
                 />
                 <Description description={cv.personalInfo.description}/>
                 <Experience experience= {cv.experience} />
-                <Education />
+                <Education education= {cv.education} />
             </div>
         </div>
     )
